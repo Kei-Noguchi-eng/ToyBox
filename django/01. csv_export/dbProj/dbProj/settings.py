@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-jp)%(xuzpfch#s5l1&nj%iz-gzg#=4v$6h0l8^a$8yz!=hly4u
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'import_export', # CSVエクスポート用
+    "dbApp"
 ]
 
 MIDDLEWARE = [
@@ -109,13 +111,15 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ja'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Tokyo'
 
 USE_I18N = True
 
 USE_TZ = True
+
+DATA_UPLOAD_MAX_NUMBER_FIELDS = 10240 # 追加
 
 
 # Static files (CSS, JavaScript, Images)
